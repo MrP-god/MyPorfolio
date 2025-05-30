@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head> 
+<body>
+    <div class="panning-background">
+        <div class="radiant-on-top"></div>
+    </div>
+    
+    <main>
+        <section class="presentation"> 
+            <h1>Hi im <span>Artiom</span>, i build web Apps and desing websites</h1>
+            <p>hobbies: Storyteller on youtube, Professional Gambler on GBPUSD</p>
+        </section>
+        
+        <section class="info-section">
+            <section class="link-container">
+                <a href="https://github.com/MrP-god" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.youtube.com/@IvanovArtiom" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <p>Email me for work: <span>ivanovartiom26@proton.me</span></p>
+            </section>
+            <!-- goals -->
+            <div x-data="{ open: false }">
+                <button class="dropdown-info-section" @click="open = ! open">
+                    <p>GOALS 2025</p>
+                    <div><i class="fa-solid fa-chevron-down" id="arrow-down"></i></div>
+                    
+                </button>
+                <div class="dropdown-content" x-show="open" @click.outside="open = false">something</div>
+            </div>
+            <section class="project-section">
+                <h2>PROJECTS</h2>  
+                <ul>
+                    {% for project in MyPortfolio._data.projects %}
+                      <li>
+                        <a href="{{ project.url }}">{{ project.title }}</a>
+                        <p>{{ project.description }}</p>
+                      </li>
+                    {% endfor %}
+                  </ul>                
+            </section>
+        </section>
+        
+    </main>
+</body>
+</html>

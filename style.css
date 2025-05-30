@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=WDXL+Lubrifont+TC&display=swap');
+
+:root{
+    --text-background: #fff;
+    --light-background: #FAFFCA;
+    --dark-background:#84AE92;
+    --medium-background: #B9D4AA;
+    --hover-background: #5A827E;
+    --Bradius: 10px;
+    --default-padding: 20px;
+    --shadow-default: 0 0 10px rgba(0,0,0,0.5);
+    --big-font: 35px;
+    --standard-font: 16px;
+    --medium-font: 20px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: "Poppins", serif;
+}
+body{
+    overflow-x: hidden;
+    background: radial-gradient( var(--light-background), var(--dark-background));
+    min-height: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.panning-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 3000px;
+    height: 2000px;
+    z-index: 1;
+    background-image: url("20px_not_rotated-removebg-preview.png");
+    background-size: 2%;
+    background-position: -19% -19%;
+    background-repeat: repeat;
+    opacity: 30%;
+    animation: pan 180s linear infinite;
+}
+.radiant-on-top{
+    background: radial-gradient(  rgba(128, 128, 128, 0) , rgba(0, 0, 0, 0.1));
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+@keyframes pan {
+    0% {background-position-x: 0%;}
+    100% {background-position-x: 100% ;}
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    /* border: 5px solid; */
+
+}
+
+.presentation{
+    background: var(--text-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: var(--default-padding);
+    border-radius: var(--Bradius);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    box-shadow: var(--shadow-default);
+    animation: moveUpDown 2s ease-in-out infinite alternate;
+}
+.presentation > h1{
+    font-size: var(--big-font);
+}
+.presentation > h1 > span{
+    color: var(--medium-background);
+}
+
+.presentation > p{
+    font-size: var(--medium-font);
+}
+
+
+
+@keyframes moveUpDown {
+    0% {transform: translate(-50%, -50%);}
+    100% {transform: translate(-50%, -60%);}
+}
+
+
+.info-section{
+    min-width: 400px;
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    background-color: var(--text-background);
+    width: 50%;
+    border-radius: var(--Bradius);
+    box-shadow: var(--shadow-default);
+    padding: var(--default-padding);
+    display: flex;
+    flex-direction: column;                                                                                                                         
+}
+.link-container{
+    font-size: var(--big-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* border: 1px solid; */
+}
+.link-container a{
+    text-decoration: none;
+    color: black;
+}
+.link-container i{
+    padding: 8px;
+}
+.link-container i:hover{
+    color: var(--hover-background);
+}
+.link-container > p{
+    margin-left: auto;
+    font-size: medium;
+}
+.link-container > p > span{
+    font-weight: 700;
+}
+
+.dropdown-info-section{
+    margin-top: 20px;
+    width: 100%;
+    border-top-left-radius: var(--Bradius);
+    border-top-right-radius: var(--Bradius);
+    background: var(--light-background);
+    padding: var(--default-padding);
+    display: flex;
+    justify-content: center;
+    font-size: var(--medium-font);
+    border: none;
+}
+.dropdown-info-section p{
+    margin-right: auto;
+    font-weight: 700;
+}
+.dropdown-content{
+    /* border: 1px solid;     */
+    padding: var(--default-padding);
+    background: var(--light-background);
+    border-bottom-left-radius: var(--Bradius);
+    border-bottom-right-radius: var(--Bradius);
+}
+
+
+.project-section{
+    padding: var(--default-padding);
+}
+.project-section h2{
+    font-size: var(--big-font);
+    
+}
